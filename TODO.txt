@@ -1,0 +1,2 @@
+1. Run npm init jest@latest to generate a Basic Jest Configuration File
+2. 
