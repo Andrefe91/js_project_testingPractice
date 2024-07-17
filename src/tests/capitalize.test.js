@@ -7,11 +7,17 @@ test('Capitalize a simple word', () => {
 });
 
 test('Capitalize two words', () => {
-    expect('two words').toBe('Two Words');
-    expect('one earth').toBe('One Earth');
+    expect(capitalize('two words')).toEqual('Two Words');
+    expect(capitalize('one earth')).toBe('One Earth');
 });
 
 test('Capitalize n number of words', () => {
-    expect('this is nothing').toBe('This Is Nothing');
-    expect('something really large for a title').toBe('Something Really Large For A Title');
+    expect(capitalize('this is nothing')).toBe('This Is Nothing');
+    expect(capitalize('something really large for a title')).toBe('Something Really Large For A Title');
+});
+
+test('Edge case: Many spaces between words', () => {
+    expect(capitalize('   many   spaces   between   words')).toBe('Many Spaces Between Words');
+    expect(capitalize('      leading    spaces')).toBe('Leading Spaces');
+    expect(capitalize('trailing    spaces   ')).toBe('Trailing Spaces');
 });
